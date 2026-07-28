@@ -1,38 +1,67 @@
 # GitHub Learning Assistant
 
+A skill for analyzing GitHub repositories and generating structured learning notes.
 
-## Overview
-
-GitHub Learning Assistant is an AI Agent Skill designed to help students analyze GitHub repositories and understand AI engineering projects.
+This project helps AI engineering students understand open-source projects,
+especially projects related to AI Agents, LLM, RAG and modern AI systems.
 
 
 ## Features
 
 This skill can help users:
 
-- Understand GitHub repository structure
+- Understand GitHub repositories
+- Analyze project structure
 - Identify important technologies
-- Analyze AI and Agent projects
 - Generate structured learning notes
+- Extract key files and concepts
 
 
-## How to Use
+## Project Structure
+
+
+github-learning-assistant/
+
+├── SKILL.md
+│ Skill definition and instructions
+
+├── scripts/
+│ Automated analysis tools
+
+│ └── analyze_repo.py
+
+├── templates/
+│ Learning note templates
+
+│ └── learning-note-template.md
+
+├── resources/
+│ Reference documents
+
+│ └── github-analysis-guide.md
+
+└── README.md
+
+
+
+## How To Use
 
 Input:
 
 A GitHub repository URL.
 
-
 Example:
 
-Analyze this repository:
+
+Analyze this GitHub repository:
 
 https://github.com/example/project
 
 
+
 Output:
 
-The assistant generates:
+A structured learning note including:
 
 - Project overview
 - Technology stack
@@ -43,14 +72,20 @@ The assistant generates:
 
 ## Learning Goal
 
-This project is created for learning:
+The goal of this skill is to help AI engineering students:
 
-- GitHub project analysis
-- Agent Skill design
-- AI engineering workflow
-- Open source project understanding
+- Read open-source projects efficiently
+- Understand AI engineering workflows
+- Learn from real-world GitHub repositories
+- Build better technical analysis skills
 
 
-## Author
+## Future Improvements
 
-Sheep10086
+Possible future improvements:
+
+- Automatic GitHub API integration
+- Better code understanding
+- Dependency analysis
+- Architecture visualization
+- AI-powered project summaries
