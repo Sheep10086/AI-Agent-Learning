@@ -42,49 +42,80 @@ github-learning-assistant/
 
 └── README.md
 
+## Installation
 
+### 1. Clone this repository
 
-## How To Use
+```bash
+git clone https://github.com/Sheep10086/AI-Agent-Learning.git
 
-Input:
+### 2. Enter the project directory
+cd 02-My-Skills/github-learning-assistant
 
-A GitHub repository URL.
+### 3. Install dependencies
+pip install -r requirements.txt
+
+## Usage
+
+Run the analyzer:
+
+python scripts/analyze_repo.py
+
+Then enter a GitHub repository URL.
 
 Example:
 
+https://github.com/openai/openai-python
 
-Analyze this GitHub repository:
+The assistant will generate:
 
-https://github.com/example/project
+Repository information
+Technology overview
+Learning steps
+Suggested exploration direction
+
+## Example Output
+
+Example:
+
+Repository Analysis
+
+Name:
+openai-python
+
+Author:
+openai
+
+Stars:
+xxxxx
+
+Forks:
+xxxxx
+
+Technology:
+
+- Python
+- Artificial Intelligence
+- Machine Learning
 
 
+Learning Steps:
 
-Output:
-
-A structured learning note including:
-
-- Project overview
-- Technology stack
-- Important files
-- Core concepts
-- Learning suggestions
-
-
-## Learning Goal
-
-The goal of this skill is to help AI engineering students:
-
-- Read open-source projects efficiently
-- Understand AI engineering workflows
-- Learn from real-world GitHub repositories
-- Build better technical analysis skills
-
+1. Read README.md
+2. Understand project structure
+3. Explore important files
+4. Run examples
+5. Modify and experiment
 
 ## Future Improvements
 
-Possible future improvements:
+Planned features:
 
-- Automatic GitHub API integration
+Automatically analyze project structure
+Detect programming languages
+Analyze source code
+Generate AI learning roadmap
+Support LLM based explanations
 - Better code understanding
 - Dependency analysis
 - Architecture visualization
