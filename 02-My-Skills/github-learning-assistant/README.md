@@ -120,3 +120,28 @@ Support LLM based explanations
 - Dependency analysis
 - Architecture visualization
 - AI-powered project summaries
+
+## Usage
+
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+
+Run:
+
+python scripts/main.py
+
+Input a GitHub repository URL:
+
+Example:
+
+https://github.com/user/project
+
+The assistant will generate:
+
+Repository analysis
+Technology summary
+Learning suggestions
+Markdown learning notes
