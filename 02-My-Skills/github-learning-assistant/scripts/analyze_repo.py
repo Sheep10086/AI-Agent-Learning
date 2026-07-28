@@ -1,40 +1,74 @@
-import os
+import requests
 
 
-def analyze_repository(repo_url):
+def get_repository_info(repo_url):
+
     """
-    Analyze a GitHub repository.
+    Get GitHub repository information.
     """
+
+    parts = repo_url.rstrip("/").split("/")
+
+    owner = parts[-2]
+    repo = parts[-1]
+
+
+    api_url = (
+        f"https://api.github.com/repos/{owner}/{repo}"
+    )
+
+
+    response = requests.get(api_url)
+
+
+    if response.status_code != 200:
+        return {
+            "error": "Cannot fetch repository information"
+        }
+
+
+    data = response.json()
+
 
     result = {
-        "Repository": repo_url,
-        "Overview": "This repository is analyzed by GitHub Learning Assistant.",
-        "Technologies": [
-            "Python",
-            "AI",
-            "Machine Learning"
-        ],
-        "Learning Notes": [
-            "Understand project structure",
-            "Read important files",
-            "Explore core technologies"
-        ]
+
+        "Name": data["name"],
+
+        "Author": data["owner"]["login"],
+
+        "Description": data["description"],
+
+        "Stars": data["stargazers_count"],
+
+        "Forks": data["forks_count"],
+
+        "Last Update": data["updated_at"]
+
     }
+
 
     return result
 
 
+
 if __name__ == "__main__":
+
 
     url = input(
         "Enter GitHub repository URL: "
     )
 
-    analysis = analyze_repository(url)
 
-    print("\n===== Learning Note =====\n")
+    info = get_repository_info(url)
 
-    for key, value in analysis.items():
-        print(key)
+
+    print("\n===== Repository Analysis =====\n")
+
+
+    for key, value in info.items():
+
+        print(key + ":")
+
         print(value)
+
         print()
