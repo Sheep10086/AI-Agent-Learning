@@ -24,46 +24,79 @@ Use this skill when:
 
 ## Instructions
 
-When analyzing a repository:
 
-1. Check the repository information:
+When analyzing a GitHub repository, follow these steps:
 
-- Name
+
+### Step 1: Collect Repository Information
+
+First check:
+
+- Repository name
 - Author
+- Description
 - Stars
 - Forks
 - Last update
 
 
-2. Analyze the project structure:
+Use scripts/analyze_repo.py when repository information needs to be collected automatically.
 
-- README
+
+### Step 2: Understand Project Structure
+
+Analyze:
+
+- README.md
 - Main folders
+- Source code
 - Documentation
 - Examples
 
 
-3. Identify important technologies:
+### Step 3: Identify Technologies
 
-Examples:
+Identify important technologies:
 
-- LLM
-- Agent
-- RAG
+- Programming languages
+- Frameworks
+- AI models
+- Agent frameworks
+- RAG systems
 - MCP
-- Vector Database
+- Vector databases
 
 
-4. Generate learning notes:
+Refer to:
 
-Include:
+resources/github-analysis-guide.md
+
+
+### Step 4: Generate Learning Notes
+
+Use:
+
+templates/learning-note-template.md
+
+
+The output should include:
 
 - Project overview
-- Core concepts
+- Technology stack
 - Important files
-- What I learned
-- Next learning steps
+- Core concepts
+- Learning notes
+- Next steps
 
+
+### Step 5: Output Quality Rules
+
+The final explanation should:
+
+- Be understandable for AI engineering students
+- Explain why technologies are used
+- Explain project architecture
+- Provide learning suggestions
 
 ## Output Format
 
