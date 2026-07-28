@@ -18,7 +18,13 @@ def get_repository_info(repo_url):
     )
 
 
+try:
     response = requests.get(api_url)
+
+except Exception as e:
+    return {
+        "error": str(e)
+    }
 
 
     if response.status_code != 200:
@@ -49,7 +55,53 @@ def get_repository_info(repo_url):
 
     return result
 
+def generate_learning_note(info):
+    """
+    Generate a simple learning note.
+    """
 
+    note = f"""
+# {info['Name']} Learning Notes
+
+
+## Overview
+
+{info['Description']}
+
+
+## Repository Information
+
+- Author: {info['Author']}
+- Stars: {info['Stars']}
+- Forks: {info['Forks']}
+- Last Update: {info['Last Update']}
+
+
+## Technology
+
+Possible technologies:
+
+- Python
+- Artificial Intelligence
+- Machine Learning
+- Large Language Model
+
+
+## Learning Steps
+
+1. Read README.md
+2. Understand project structure
+3. Explore important files
+4. Try running examples
+5. Modify and experiment
+
+
+## Next Steps
+
+Continue studying related AI concepts.
+"""
+
+    return note
 
 if __name__ == "__main__":
 
@@ -65,10 +117,6 @@ if __name__ == "__main__":
     print("\n===== Repository Analysis =====\n")
 
 
-    for key, value in info.items():
+note = generate_learning_note(info)
 
-        print(key + ":")
-
-        print(value)
-
-        print()
+print(note)
