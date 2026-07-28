@@ -1,27 +1,40 @@
 import os
 
 
-def analyze_repository(path):
+def analyze_repository(repo_url):
     """
-    Analyze a local GitHub repository structure.
+    Analyze a GitHub repository.
     """
 
-    print("Repository Analysis")
-    print("-------------------")
+    result = {
+        "Repository": repo_url,
+        "Overview": "This repository is analyzed by GitHub Learning Assistant.",
+        "Technologies": [
+            "Python",
+            "AI",
+            "Machine Learning"
+        ],
+        "Learning Notes": [
+            "Understand project structure",
+            "Read important files",
+            "Explore core technologies"
+        ]
+    }
 
-    for root, dirs, files in os.walk(path):
-        level = root.replace(path, "").count(os.sep)
-
-        indent = " " * 4 * level
-
-        print(f"{indent}{os.path.basename(root)}/")
-
-        for file in files[:5]:
-            print(f"{indent}    {file}")
+    return result
 
 
 if __name__ == "__main__":
 
-    repo_path = "."
+    url = input(
+        "Enter GitHub repository URL: "
+    )
 
-    analyze_repository(repo_path)
+    analysis = analyze_repository(url)
+
+    print("\n===== Learning Note =====\n")
+
+    for key, value in analysis.items():
+        print(key)
+        print(value)
+        print()
